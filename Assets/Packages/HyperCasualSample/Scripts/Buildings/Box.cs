@@ -20,6 +20,7 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         private Sequence AnimationSequence;
 
         private ConcurrentQueue<Func<Task>> boxesQueue;
+        private Hero _hero;
         
         private void Awake()
         {
@@ -29,14 +30,21 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         private void Start()
         {
             boxesQueue = new ConcurrentQueue<Func<Task>>();
+            _hero = ServiceLocator.Instance.Single<HeroProvider>().Hero;
             Test();
         }
 
         private void AddOne()
         {
+            if(_hero.IsEmpty)
+                return;
+
+            
+            
             boxesQueue.Enqueue(async () =>
             {
-                var box = Pull.First(t => !t.gameObject.activeSelf);
+                var box = _hero.RemoveBoxes(); 
+                    //Pull.First(t => !t.gameObject.activeSelf);
                 
                 var endPosition = Placeholder.GetEndPosition();
                 var startPosition = Placeholder.GetStartPosition();

@@ -14,11 +14,11 @@ public class GameBootstrap : MonoBehaviour
    
    private void Awake()
    {
-      
       ServiceLocator.Instance.RegisterSingle(new SceneLoader());
       ServiceLocator.Instance.RegisterSingle(new InputService());
       ServiceLocator.Instance.RegisterSingle(new ConfigProvider());
-
+      ServiceLocator.Instance.RegisterSingle(new HeroProvider());
+      
       var configProvider = ServiceLocator.Instance.Single<ConfigProvider>();
       configProvider.RegisterSingle(LevelConfig);
       

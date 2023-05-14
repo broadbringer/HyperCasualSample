@@ -6,7 +6,8 @@ namespace Packages.HyperCasualSample.Scripts.Kernel
     {
         public CharacterController CharacterController;
         public float MovementSpeed;
-
+        public Hero Hero;
+        
         private InputService _inputService;
         private Camera _camera;
         
@@ -27,6 +28,11 @@ namespace Packages.HyperCasualSample.Scripts.Kernel
                 movementVector.Normalize();
 
                 transform.forward = movementVector;
+                Hero.Animator.SetMoving(true);
+            }
+            else
+            {
+                Hero.Animator.SetMoving(false);
             }
             
             CharacterController.Move(MovementSpeed * movementVector * Time.deltaTime);
