@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Kernel
 {
@@ -10,8 +9,7 @@ namespace Packages.HyperCasualSample.Scripts.Kernel
 
         private InputService _inputService;
         private Camera _camera;
-
-
+        
         private void Start()
         {
             _inputService = ServiceLocator.Instance.Single<InputService>();
@@ -30,9 +28,7 @@ namespace Packages.HyperCasualSample.Scripts.Kernel
 
                 transform.forward = movementVector;
             }
-
-           // movementVector += Physics.gravity;
-
+            
             CharacterController.Move(MovementSpeed * movementVector * Time.deltaTime);
         }
     }
