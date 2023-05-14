@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Packages.HyperCasualSample.Scripts.Kernel;
 using UnityEngine;
@@ -33,7 +34,6 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
 
         private void AddOne()
         {
-            
             boxesQueue.Enqueue(async () =>
             {
                 var box = Pull.First(t => !t.gameObject.activeSelf);
@@ -49,11 +49,11 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
             
         }
 
-        private async Task Test()
+        private async UniTask Test()
         {
             while (true)
             {
-                await Task.Yield();
+                await UniTask.Yield();
                 while (boxesQueue.TryDequeue(out var action))
                 {
                     await action.Invoke();

@@ -40,7 +40,7 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         public Vector3 GetEndPosition()
         {
             var resultX = StartVector.x + ColumnSpacing.x * currentColumn;
-            var resultZ = StartVector.z + RowSpacing.z * currentRow;
+            var resultZ = StartVector.z - RowSpacing.z * currentRow;
             var resultY = YDelta * currentLayer;
             
             IncreaseRow();
