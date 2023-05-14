@@ -28,10 +28,10 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         {
             _maxAmount = ServiceLocator.Instance.Single<ConfigProvider>().Single<LevelConfig>().BoxPlaceholderMaxAmount;
 
-            for (int i = 0; i < 7; i++)
-            {
-                Debug.Log(GetEndPosition());
-            }
+            // for (int i = 0; i < 7; i++)
+            // {
+            //     Debug.Log(GetEndPosition());
+            // }
         }
 
         public void DrawSource()
@@ -48,7 +48,7 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         // }
 
         
-        private Vector3 GetEndPosition()
+        public Vector3 GetEndPosition()
         {
             var resultX = StartVector.x + ColumnSpacing.x * currentColumn;
             var resultZ = StartVector.z + RowSpacing.z * currentRow;

@@ -15,14 +15,14 @@ namespace Packages.HyperCasualSample.Scripts.Kernel
             _triggerStayAction = triggerStayAction;
             _triggerExitAction = triggerExitAction;
         }
-
-        public void OnTriggerEnter(Collider other) => 
+        
+        public void OnCollisionEnter(Collision other) => 
             _triggerEnterAction?.Invoke();
 
-        public void OnTriggerStay(Collider other) => 
+        public void OnCollisionStay(Collision other) => 
             _triggerStayAction?.Invoke();
 
-        public void OnTriggerExit(Collider other) => 
+        public void OnCollisionExit(Collision other) => 
             _triggerExitAction?.Invoke();
     }
 }
