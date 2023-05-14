@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using Packages.HyperCasualSample.Scripts.Services;
+using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Data
 {
     [CreateAssetMenu(fileName = "LevelConfig", menuName = "StaticData/Config/Level", order = 0)]
-    public class LevelConfig : ScriptableObject
+    public class LevelConfig : ScriptableObject, IConfig
     {
-        
+        public int BoxPlaceholderMaxAmount = 10;
+        public int FactoryPlaceholderMaxAmount = 10;
+        public int HeroPlaceholderMaxAmount = 10;
     }
 }

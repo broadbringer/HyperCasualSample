@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using DG.Tweening;
 using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Animations
 {
     public class RocketFadeUp : MonoBehaviour
     {
-        private IEnumerator Start()
-        {
-            yield return new WaitForSeconds(3);
-            
-        }
+        public Transform Rocket;
+        public float AnimationTime = 1f;
+        public Vector3 EndScale = new (1, 1, 0.8f);
+
+        public void Execute() => 
+            Rocket.transform.DOScale(EndScale, AnimationTime);
     }
 }
