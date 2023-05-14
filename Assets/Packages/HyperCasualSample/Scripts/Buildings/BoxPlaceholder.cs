@@ -24,29 +24,18 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         private int currentColumn;
         private int currentLayer;
         
-        private void Start()
-        {
+        private void Start() => 
             _maxAmount = ServiceLocator.Instance.Single<ConfigProvider>().Single<LevelConfig>().BoxPlaceholderMaxAmount;
 
-            // for (int i = 0; i < 7; i++)
-            // {
-            //     Debug.Log(GetEndPosition());
-            // }
-        }
 
-        public void DrawSource()
+        public Vector3 GetStartPosition()
         {
-            if (!isFilled)
-            {
-                
-            }
+            var resultX = StartVector.x + ColumnSpacing.x * currentColumn;
+            var resultZ = StartVector.z + RowSpacing.z ;
+            var resultY = StartVector.y - YDelta;
+            
+            return new Vector3(resultX, resultY, resultZ);
         }
-
-        // private Vector3 GetStartPosition(int index)
-        // {
-        //     
-        // }
-
         
         public Vector3 GetEndPosition()
         {
