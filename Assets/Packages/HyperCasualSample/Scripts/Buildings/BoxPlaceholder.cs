@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Packages.HyperCasualSample.Scripts.Data;
 using Packages.HyperCasualSample.Scripts.Kernel;
+using Packages.HyperCasualSample.Scripts.Providers;
 using Packages.HyperCasualSample.Scripts.Services;
 using UnityEngine;
 

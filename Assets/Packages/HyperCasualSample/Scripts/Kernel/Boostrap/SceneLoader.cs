@@ -1,8 +1,11 @@
-﻿using Packages.HyperCasualSample.Scripts.Kernel;
+﻿using Packages.HyperCasualSample.Scripts.Services;
 using UnityEngine.SceneManagement;
 
-public class SceneLoader : IService
+namespace Packages.HyperCasualSample.Scripts.Kernel.Boostrap
 {
-    public void LoadWith(string gameplaySceneName) => 
-        SceneManager.LoadScene(gameplaySceneName);
+    public class SceneLoader : IService
+    {
+        public void LoadWith(string gameplaySceneName) => 
+            SceneManager.LoadScene(gameplaySceneName);
+    }
 }

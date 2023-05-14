@@ -1,4 +1,4 @@
-﻿using Packages.HyperCasualSample.Scripts.Services;
+﻿using Packages.HyperCasualSample.Scripts.Providers;
 using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Data

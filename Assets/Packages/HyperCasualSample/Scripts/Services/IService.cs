@@ -1,6 +1,6 @@
 ﻿namespace Packages.HyperCasualSample.Scripts.Services
 {
-    public interface IConfig
+    public interface IService
     {
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace Packages.HyperCasualSample.Scripts.Kernel
+﻿namespace Packages.HyperCasualSample.Scripts.Services
 {
     public class ServiceLocator
     {

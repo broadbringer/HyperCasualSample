@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Buildings
 {
-    public class RocketFactory : MonoBehaviour
+    public class RocketDevelopMachine : MonoBehaviour
     {
         public TriggerZone TriggerZone;
     }

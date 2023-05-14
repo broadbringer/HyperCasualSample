@@ -2,7 +2,7 @@
 
 namespace Packages.HyperCasualSample.Scripts.Buildings
 {
-    public class Source : MonoBehaviour
+    public class Tool : MonoBehaviour
     {
         
     }

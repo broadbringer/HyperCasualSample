@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Packages.HyperCasualSample.Scripts.Animations;
 using UnityEngine;
 
-namespace Packages.HyperCasualSample.Scripts.Kernel
+namespace Packages.HyperCasualSample.Scripts.MainHero
 {
     public class Hero : MonoBehaviour
     {

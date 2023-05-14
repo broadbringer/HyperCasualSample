@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Packages.HyperCasualSample.Scripts.Buildings
+namespace Packages.HyperCasualSample.Scripts.Tools
 {
-    public class BoxesShelter : MonoBehaviour
+    public class ToolsPack : MonoBehaviour
     {
         public int Amount;
         public GameObject BoxPrefab;

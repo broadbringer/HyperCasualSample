@@ -1,7 +1,6 @@
-﻿using Packages.HyperCasualSample.Scripts.Kernel;
-using UnityEngine;
+﻿using Packages.HyperCasualSample.Scripts.Services;
 
-namespace Packages.HyperCasualSample.Scripts.Services
+namespace Packages.HyperCasualSample.Scripts.Providers
 {
     public class ConfigProvider : IService
     {

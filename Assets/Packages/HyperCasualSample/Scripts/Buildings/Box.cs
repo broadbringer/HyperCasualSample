@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Packages.HyperCasualSample.Scripts.Kernel;
+using Packages.HyperCasualSample.Scripts.MainHero;
+using Packages.HyperCasualSample.Scripts.Providers;
+using Packages.HyperCasualSample.Scripts.Services;
 using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Buildings
@@ -14,18 +17,14 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
     {
         public TriggerZone TriggerZone;
         public BoxPlaceholder Placeholder;
-
-        public List<Transform> Pull;
-
+        
         private Sequence AnimationSequence;
 
         private ConcurrentQueue<Func<Task>> boxesQueue;
         private Hero _hero;
         
-        private void Awake()
-        {
+        private void Awake() => 
             TriggerZone.Construct(triggerStayAction: AddOne);
-        }
 
         private void Start()
         {
@@ -38,13 +37,10 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
         {
             if(_hero.IsEmpty)
                 return;
-
-            
             
             boxesQueue.Enqueue(async () =>
             {
                 var box = _hero.RemoveBoxes(); 
-                    //Pull.First(t => !t.gameObject.activeSelf);
                 
                 var endPosition = Placeholder.GetEndPosition();
                 var startPosition = Placeholder.GetStartPosition();

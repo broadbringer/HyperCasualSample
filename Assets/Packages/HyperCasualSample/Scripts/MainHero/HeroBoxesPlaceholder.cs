@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Packages.HyperCasualSample.Scripts.Kernel
+namespace Packages.HyperCasualSample.Scripts.MainHero
 {
     public class HeroBoxesPlaceholder : MonoBehaviour
     {

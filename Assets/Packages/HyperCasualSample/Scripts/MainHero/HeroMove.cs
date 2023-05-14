@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Packages.HyperCasualSample.Scripts.Kernel.Boostrap;
+using Packages.HyperCasualSample.Scripts.Services;
+using UnityEngine;
 
-namespace Packages.HyperCasualSample.Scripts.Kernel
+namespace Packages.HyperCasualSample.Scripts.MainHero
 {
     public class HeroMove : MonoBehaviour
     {
