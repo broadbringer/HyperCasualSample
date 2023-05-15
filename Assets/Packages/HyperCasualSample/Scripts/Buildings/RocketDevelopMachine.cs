@@ -65,7 +65,8 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
 
         public void RemoveOne()
         {
-            tools.Pop();
+            var tool = tools.Pop();
+            Destroy(tool.gameObject);
             ToolsAmount--;
         }
 

@@ -8,7 +8,9 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
     {
         public RocketDevelopMachine RocketDevelopMachine;
         public RocketMachineAnimation RocketMachineAnimation;
-
+        public RocketPack RocketPack;
+        public GameObject RocketPrefab;
+        
         private void Start()
         {
             Execute();
@@ -19,11 +21,13 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
             while (true)
             {
                 await UniTask.Yield();
-                
-                if(RocketDevelopMachine.ToolsAmount >0)
+
+                if (RocketDevelopMachine.ToolsAmount > 0)
+                {
                     RocketDevelopMachine.RemoveOne();
-                
-                await RocketMachineAnimation.PlayPressAnimation();
+                    await RocketMachineAnimation.PlayPressAnimation();
+                    RocketPack.AddOne(Instantiate(RocketPrefab, new Vector3(), Quaternion.identity).transform);
+                }
             }
         }
     }

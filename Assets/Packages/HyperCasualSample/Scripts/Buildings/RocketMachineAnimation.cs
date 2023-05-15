@@ -21,7 +21,7 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
             sequance.Append(Press.DOLocalMoveY(PressEndPosition.y, PressTimeAnimation / 2));
             sequance.Append(Press.DOLocalMoveY(PressStartPosition.y, PressTimeAnimation / 2));
             sequance.Append(RocketFadeUp.Execute());
-            await UniTask.Delay(TimeSpan.FromSeconds(PressTimeAnimation));
+            await UniTask.Delay(TimeSpan.FromSeconds(PressTimeAnimation + 3.4f));
         }
     }
 }
