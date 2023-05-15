@@ -31,7 +31,7 @@ namespace Packages.HyperCasualSample.Scripts.MainHero
         {
             Animator.SetWithBox(false);
             AmountOfBoxes--;
-
+            HeroBoxesPlaceholder.RemoveOne();
             return boxes.Dequeue();
         }
 

@@ -38,6 +38,11 @@ namespace Packages.HyperCasualSample.Scripts.MainHero
             });
         }
 
+        public void RemoveOne()
+        {
+            NextYPosition -= YDelta;
+        }
+        
         private async UniTask Test()
         {
             while (true)

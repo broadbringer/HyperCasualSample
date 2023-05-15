@@ -53,7 +53,7 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
                 
                 AnimationSequence.Append(box.gameObject.transform.DOLocalJump(endPosition, 0.6f, 1, 0.1f));
                 AnimationSequence.AppendCallback(() => box.gameObject.transform.localRotation = Quaternion.identity);
-                await Task.Delay(TimeSpan.FromSeconds(0.1f));
+                await UniTask.Delay(TimeSpan.FromSeconds(0.1f));
             });
             
         }
