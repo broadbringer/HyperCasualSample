@@ -42,12 +42,17 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
             {
                 var box = _hero.RemoveBoxes(); 
                 
+                box.transform.SetParent(Placeholder.transform);
+                
                 var endPosition = Placeholder.GetEndPosition();
                 var startPosition = Placeholder.GetStartPosition();
             
                 box.transform.localPosition = startPosition;
                 box.gameObject.SetActive(true);
+                box.transform.localRotation = Quaternion.identity;
+                
                 AnimationSequence.Append(box.gameObject.transform.DOLocalJump(endPosition, 0.6f, 1, 0.1f));
+                AnimationSequence.AppendCallback(() => box.gameObject.transform.localRotation = Quaternion.identity);
                 await Task.Delay(TimeSpan.FromSeconds(0.1f));
             });
             

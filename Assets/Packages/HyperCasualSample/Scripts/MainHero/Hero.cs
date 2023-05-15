@@ -13,7 +13,7 @@ namespace Packages.HyperCasualSample.Scripts.MainHero
 
         public bool IsEmpty => AmountOfBoxes == 0;
 
-        private Queue<Transform> boxes;
+        private Queue<Transform> boxes = new Queue<Transform>();
         
         private void Awake()
         {

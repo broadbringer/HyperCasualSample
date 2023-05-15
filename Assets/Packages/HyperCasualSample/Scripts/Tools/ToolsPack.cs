@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Packages.HyperCasualSample.Scripts.Tools
 {
@@ -20,6 +21,8 @@ namespace Packages.HyperCasualSample.Scripts.Tools
         private int currentColumn;
         private int currentLayer;
 
+        public Stack<Transform> Tools { get; }= new();
+
         private void Start()
         {
             for (int i = 0; i < Amount; i++)
@@ -27,6 +30,7 @@ namespace Packages.HyperCasualSample.Scripts.Tools
                 var box = Instantiate(BoxPrefab, transform, false);
                 box.transform.localPosition = GetEndPosition();
                 box.transform.localScale = new Vector3(1, 1, 1);
+                Tools.Push(box.transform);
             }
         }
         
