@@ -33,7 +33,6 @@ namespace Packages.HyperCasualSample.Scripts.MainHero
                 AnimationSequence.Append(box.gameObject.transform.DOScale(new Vector3(1, 0.5f, 1), 0.1f));
                 AnimationSequence.Join(box.gameObject.transform.DOLocalMove(endValue, 0.1f));
                 AnimationSequence.AppendCallback(() => box.transform.localRotation = Quaternion.identity);
-                Debug.LogError($"I move to {endValue}");
                 await UniTask.Delay(TimeSpan.FromSeconds(0.4f));
             });
         }

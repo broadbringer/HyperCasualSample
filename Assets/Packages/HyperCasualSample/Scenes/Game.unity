@@ -551,6 +551,8 @@ GameObject:
   - component: {fileID: 286221404}
   - component: {fileID: 286221408}
   - component: {fileID: 286221409}
+  - component: {fileID: 286221410}
+  - component: {fileID: 286221411}
   m_Layer: 0
   m_Name: Machine
   m_TagString: Untagged
@@ -670,6 +672,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TriggerZone: {fileID: 1276090399}
   Placeholder: {fileID: 1276090398}
+--- !u!114 &286221410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286221403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62357ec29724e8dafc7a03b33a910f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RocketFadeUp: {fileID: 1418654271}
+  Press: {fileID: 2063785650}
+  PressTimeAnimation: 1.5
+  PressStartPosition: {x: 1.875, y: 1, z: 1.625}
+  PressEndPosition: {x: 1.875, y: 0.31, z: 1.625}
+--- !u!114 &286221411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286221403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846c0a14333945929b66eea8a9e750dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RocketDevelopMachine: {fileID: 286221409}
+  RocketMachineAnimation: {fileID: 286221410}
 --- !u!1 &287568961
 GameObject:
   m_ObjectHideFlags: 0

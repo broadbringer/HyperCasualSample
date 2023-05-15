@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -20,6 +21,10 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
 
         private ConcurrentQueue<Func<Task>> boxesQueue;
         private Hero _hero;
+
+        private Stack<Transform> tools = new();
+        
+        public int ToolsAmount { get; private set; }
         
         private void Awake() => 
             TriggerZone.Construct(triggerStayAction: AddOne);
@@ -41,7 +46,7 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
             boxesQueue.Enqueue(async () =>
             {
                 var box = _hero.RemoveBoxes(); 
-                
+                tools.Push(box);
                 box.transform.SetParent(Placeholder.transform);
                 
                 var endPosition = Placeholder.GetEndPosition();
@@ -54,8 +59,14 @@ namespace Packages.HyperCasualSample.Scripts.Buildings
                 AnimationSequence.Append(box.gameObject.transform.DOLocalJump(endPosition, 0.6f, 1, 0.1f));
                 AnimationSequence.AppendCallback(() => box.gameObject.transform.localRotation = Quaternion.Euler(0,90,0));
                 await UniTask.Delay(TimeSpan.FromSeconds(0.1f));
+                ToolsAmount++;
             });
-            
+        }
+
+        public void RemoveOne()
+        {
+            tools.Pop();
+            ToolsAmount--;
         }
 
         private async UniTask Test()
